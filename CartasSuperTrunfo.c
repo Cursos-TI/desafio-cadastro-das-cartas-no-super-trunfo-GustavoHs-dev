@@ -33,7 +33,7 @@ int main() {
 
     printf("\nDigite uma letra de A a H(Representando um dos 8 estados):\n");
     scanf(" %c", &estado1);
-    printf("Digite a letra do estado seguido de um numero de 01 a 04:\n");
+    printf("Digite a letra do estado seguido de um numero de 01 a 04: \n");
     scanf("%s", &codigo1);
     printf("Digite o nome da cidade:\n");
     scanf("%s", &cidade1);
