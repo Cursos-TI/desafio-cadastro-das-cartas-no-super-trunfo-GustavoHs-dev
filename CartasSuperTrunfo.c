@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int main() {
 
     // armazenamento de dados das cartas
@@ -15,6 +16,7 @@ int main() {
     int pontosturisticos1;
     float densidadepopulacional1;
     float Pibpercapta1;
+    float poder1;
     
     // carta2
 
@@ -27,7 +29,7 @@ int main() {
     int pontosturisticos2;
     float densidadepopulacional2;
     float Pibpercapta2;
-
+    float poder2;
     
     // Cadastro das Cartas:
 
@@ -73,11 +75,15 @@ int main() {
     printf("*** Carta Registrada ***\n");
     // novamente permite que o usuario visualize que o codigo esta funcionando corretamente
 
+    // calcula os dados fornecidos pelo usuario para definir os valores de densidade populacional, pib per capta e super poder
+
     densidadepopulacional1 = (float)populacao1 / area1;
     Pibpercapta1 = Pib1 / (float)populacao1;
+    poder1 = (float)populacao1 + area1 + Pib1 + (float)pontosturisticos1 + Pibpercapta1 - densidadepopulacional1;
 
     densidadepopulacional2 = (float)populacao2 / area2;
     Pibpercapta2 = Pib2 / (float)populacao2;
+    poder2 = (float)populacao2 + area2 + Pib2 + (float)pontosturisticos2 + Pibpercapta2 - densidadepopulacional2;
     
     // Exibição dos Dados das Cartas:
 
@@ -92,11 +98,12 @@ int main() {
     printf("PIB: %.2f bilhões de reais\n", Pib1);
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos1);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadepopulacional1);
-    printf("PIB per Capita: %.2f Reais\n");
+    printf("PIB per Capita: %.2f Reais\n", Pibpercapta1);
+    printf("Super Poder: %.2f\n", poder1);
 
     // carta 2
 
-     printf("\n*** Carta2 ***\n");
+    printf("\n*** Carta2 ***\n");
     printf("Estado: %c\n", estado2);
     printf("Codigo: %s\n", codigo2);
     printf("Nome da Cidade: %s\n", cidade2);
@@ -105,8 +112,26 @@ int main() {
     printf("PIB: %.2f bilhões de reais\n", Pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadepopulacional2);
-    printf("PIB per Capita: %.2f Reais\n");
+    printf("PIB per Capita: %.2f Reais\n", Pib2);
+    printf("Super Poder: %.2f\n", poder1);
 
+    printf("\n*** Batalha  De Cartas ***\n");
+
+    printf("\n    Como funciona:\n");
+    printf("No terminal sera exibido uma sequencia comparando cada atributo das cartas cadastradas\n");
+    printf("Caso o resultado for 1 o vencedor e a carta1 e se o resultado for 0 o vencedor e a carta2\n");
+
+    // perite o usuario ter um maior entendimento sobre o funcionamento do sistema e sobre a batalha de cartas
+
+    printf("\nQuem tem a maior populacão: %d\n", populacao1 > populacao2);
+    printf("Quem tem a maior Areakm²:%d\n", area1 > area2);
+    printf("Quem tem o maior Pib: %d\n", Pib1 > Pib2);
+    printf("Quem tem maior numero de pontos turisticos: %d\n", pontosturisticos1 > pontosturisticos2);
+    printf("Quem tem menor densidade populacional: %d\n", densidadepopulacional1 < densidadepopulacional2);
+    printf("Quem tem maior Pib por Capita: %d\n", Pibpercapta1 > Pibpercapta2);
+    printf("Quem tem maior Super Poder: %d\n", poder1 > poder2);
+
+    // sistema de comparacao de cartas e de impessao no terminal
 
     return 0;
 }
